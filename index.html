@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b3a">
+  <title>HPP Master — Kalkulator HPP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <form id="loginForm" class="login-card">
+      <div class="brand-mark">HPP</div>
+      <p class="eyebrow">FOOD & BEVERAGE COST CALCULATOR</p>
+      <h1>HPP Master</h1>
+      <p class="muted">Masuk ke aplikasi kalkulator biaya produksi.</p>
+      <label>Nama pengguna<input id="loginUsername" autocomplete="username" required placeholder="admin"></label>
+      <label>Kata sandi<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Masukkan kata sandi"></label>
+      <button class="btn primary full" type="submit">Masuk</button>
+      <p id="loginError" class="error"></p>
+      <div class="hint"><b>Akun awal:</b> admin / admin123<br>Ganti kata sandi setelah masuk.</div>
+    </form>
+  </div>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><div class="brand-mark small">HPP</div><div><b>HPP Master</b><small>Cost Calculator</small></div></div>
+      <div class="user-chip"><span class="avatar" id="userAvatar">A</span><div><b id="sideUser">Admin</b><small id="sideRole">Administrator</small></div></div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="ingredients">▤ <span>Bahan baku</span></button>
+        <button class="nav-item" data-page="recipes">▧ <span>Resep & produk</span></button>
+        <button class="nav-item" data-page="calculator">⌗ <span>Kalkulator HPP</span></button>
+        <button class="nav-item" data-page="reports">▥ <span>Laporan</span></button>
+        <button class="nav-item" data-page="history">◷ <span>Riwayat</span></button>
+        <button class="nav-item admin-only" data-page="users">♙ <span>Pengguna</span></button>
+        <button class="nav-item admin-only" data-page="settings">⚙ <span>Pengaturan</span></button>
+      </nav>
+      <button id="logoutBtn" class="nav-item logout">↪ <span>Keluar</span></button>
+      <div class="sidebar-note">Penyimpanan lokal perangkat<br><small>IndexedDB</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><p class="eyebrow" id="pageEyebrow">RINGKASAN USAHA</p><h2 id="pageTitle">Dashboard</h2></div><div class="top-actions"><span class="local-badge">● Lokal</span><button class="icon-btn" id="backupBtn" title="Backup data">⇩</button></div></header>
+      <section id="pageContent"></section>
+      <footer>HPP Master · Kalkulator biaya produksi makanan, kue & minuman</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <input type="file" id="restoreFile" accept="application/json" hidden>
+  <script src="app.js"></script>
+</body>
+</html>
